@@ -29,22 +29,22 @@ Setup:
     shpc install quay.io/biocontainers/multiqc:1.11--pyhdfd78af_0
     ```
 1. Have `singularity` in the `PATH`, with all required variables, such as `SINGULARITY_BINDPATH`
-2. Have the container modules tree in `MODULEPATH`, e.g. using `module use`
+2. Have the container modules tree in `MODULEPATH`, e.g. using `module use <..>`
 
 Run: `nextflow run main.nf -profile shpc`  
 
 
-### 3. Run with Miniconda
+### 3. Run with Conda
 
 Setup:
-1. Have `conda` available
+1. Have `conda` available in the shell environment
 2. (one-off) Add a couple of Conda channels, as required by some package dependencies:
     ```
     conda config --add channels cctbx202112
     conda config --add channels conda-forge
     ```
 
-Run: nextflow run main.nf -profile conda`  
+Run: `nextflow run main.nf -profile conda`  
 
 
 ### Expected output
