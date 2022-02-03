@@ -36,3 +36,32 @@ On successful completion of the four tasks, the following message is displayed:
 ```
 Done! Open the following report in your browser --> results/multiqc_report.html
 ```
+
+
+### Implementation note
+
+The key configuration difference between using Singularity or SHPC modules are the keywords `process.container`/`process.module`; the container/module names are almost a copy/paste, with the colon `:` between container name and tag being replaced by a slash `/` in the module.  Here is the relevant snippet of the configuration file `nextflow.config`:
+
+```
+  singularity {
+    process {
+      withName: 'index|quant' { container = 'quay.io/biocontainers/salmon:1.6.0--h84f40af_0' }
+      withName: 'fastqc'      { container = 'quay.io/biocontainers/fastqc:0.11.9--0' }
+      withName: 'multiqc'     { container = 'quay.io/biocontainers/multiqc:1.11--pyhdfd78af_0' }
+    }
+    singularity.enabled = true
+    singularity.autoMounts = true
+  }
+
+  shpc {
+    process {
+      withName: 'index|quant' { module = 'quay.io/biocontainers/salmon/1.6.0--h84f40af_0' }
+      withName: 'fastqc'      { module = 'quay.io/biocontainers/fastqc/0.11.9--0' }
+      withName: 'multiqc'     { module = 'quay.io/biocontainers/multiqc/1.11--pyhdfd78af_0' }
+    }
+  }
+```
+
+
+
+
