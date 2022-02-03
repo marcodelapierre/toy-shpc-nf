@@ -11,9 +11,11 @@ The pipeline requires [Nextflow](https://github.com/nextflow-io/nextflow) to run
 
 ### 1. Run with Singularity
 
-Setup: have `singularity` in the `PATH`, with all required variables, such as `SINGULARITY_BINDPATH`  
+Setup:
+* have `singularity` in the `PATH`, with all required variables, such as `SINGULARITY_BINDPATH`  
 
-Run: `nextflow run main.nf -profile singularity`  
+Run:  
+    `nextflow run main.nf -profile singularity`  
 
 
 ### 2. Run with Singularity-HPC (SHPC)
@@ -28,12 +30,8 @@ Setup:
 1. have `singularity` in the `PATH`, with all required variables, such as `SINGULARITY_BINDPATH`
 2. have the container modules tree in `MODULEPATH`, e.g. using `module use`
 
-Run: `nextflow run main.nf -profile shpc`
+Run:  
+    `nextflow run main.nf -profile shpc`
 
 
-The pipeline uses the following bioinformatics software: 
-
-* [Salmon](https://combine-lab.github.io/salmon/) 0.8.2
-* [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) 0.11.5
-* [Multiqc](https://multiqc.info) 1.0
 
