@@ -11,27 +11,28 @@ The pipeline requires [Nextflow](https://github.com/nextflow-io/nextflow) to run
 
 ### 1. Run with Singularity
 
-Setup:
-* have `singularity` in the `PATH`, with all required variables, such as `SINGULARITY_BINDPATH`  
+Setup: Have `singularity` in the `PATH`, with all required variables, such as `SINGULARITY_BINDPATH`  
 
-Run:  
-    `nextflow run main.nf -profile singularity`  
+Run: `nextflow run main.nf -profile singularity`  
 
 
 ### 2. Run with Singularity-HPC (SHPC)
 
 Setup:
-1. (one-off) pre-install the relevant container modules:
+1. (one-off) Pre-install the relevant container modules:
     ```
     shpc install quay.io/biocontainers/salmon:1.6.0--h84f40af_0
     shpc install quay.io/biocontainers/fastqc:0.11.9--0
     shpc install quay.io/biocontainers/multiqc:1.11--pyhdfd78af_0
     ```
-1. have `singularity` in the `PATH`, with all required variables, such as `SINGULARITY_BINDPATH`
-2. have the container modules tree in `MODULEPATH`, e.g. using `module use`
+1. Have `singularity` in the `PATH`, with all required variables, such as `SINGULARITY_BINDPATH`
+2. Have the container modules tree in `MODULEPATH`, e.g. using `module use`
 
-Run:  
-    `nextflow run main.nf -profile shpc`
-
+Run: `nextflow run main.nf -profile shpc`
 
 
+The run takes under a minute to complete (excluding container downlaod times, one-off).  
+On successful completion of the four tasks, the following message is displayed:  
+```
+Done! Open the following report in your browser --> results/multiqc_report.html
+```
