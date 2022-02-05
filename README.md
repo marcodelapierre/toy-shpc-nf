@@ -95,7 +95,7 @@ CPU hours   : (a few seconds)
 Succeeded   : 4
 ```
 
-### 2. Run with Singularity-HPC (SHPC)
+### 3. Run with Singularity-HPC (SHPC)
 
 So why would you want to use shpc if it's one more dependency? Since we can install the containers as modules,
 given a shared HPC module system, users can easily share them across workflows. Or if it's just you, you can do the same.
@@ -133,7 +133,7 @@ $ nextflow run main.nf -profile shpc
 ```
 
 
-### 3. Run with Conda
+### 4. Run with Conda
 
 Finally, here is how to run the same workflow with conda! You'll need to have the `conda` executable on your path,
 and to add the correct channels:
