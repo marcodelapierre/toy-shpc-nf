@@ -76,7 +76,7 @@ $ curl -s https://get.nextflow.io | bash
 
 ### 2. Clone workflow
 
-And finally, you need the workflow!
+And now, you need the workflow!
 
 ```
 $ git clone https://github.com/researchapps/demo-shpc-nf
