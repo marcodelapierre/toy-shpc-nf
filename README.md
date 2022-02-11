@@ -10,14 +10,16 @@ The Conda example requires only [Miniconda](https://docs.conda.io).
 
 **Credits**: the backbone of the pipeline (`main.nf`) and sample input data come from [nextflow-io/rnaseq-nf](https://github.com/nextflow-io/rnaseq-nf).  
 
+
 ## Usage
+
 
 ### 1. Setup
 
-#### Install Modules
+#### Install Modules (if needed)
 
-Most clusters will already have a module system installed, but if needed, here are basic steps to install environment modules. For this tutorial
-it was installed it on a development server using these steps.
+Most clusters will already have a module system installed, but if needed, here are basic steps to install environment modules. 
+For this tutorial Environment Modules were installed on a development server using these steps and _sudo_ powers.
 
 ```bash
 curl -LJO https://github.com/cea-hpc/modules/releases/download/v4.7.1/modules-4.7.1.tar.gz
@@ -36,9 +38,22 @@ sudo ln -s /usr/local/Modules/init/profile.sh /etc/profile.d/modules.sh
 
 The [singularity-hpc](https://github.com/singularityhub/singularity-hpc) repository has Dockerfile's and GitHub workflows that show additional examples.
 
-#### Install shpc
 
-Singularity HPC can be easily installed with a clone:
+#### Install Singularity (if needed)
+
+You can [install singularity](https://sylabs.io/guides/3.9/user-guide/quick_start.html) in many different ways! I usually choose from source. Note how a full installation requires _sudo_ powers.
+
+```bash
+$ git clone https://github.com/sylabs/singularity
+$ cd singularity
+$ ./mconfig
+$ make
+```
+
+
+#### Install Singularity-HPC (SHPC)
+
+SHPC can be easily installed with a clone, provided you have Python and Pip available:
 
 ```bash
 $ git clone https://github.com/singularityhub/singularity-hpc
@@ -46,26 +61,20 @@ $ cd singularity-hpc
 $ pip install -e .
 ```
 
-Ensure to configure it for your module software (default is lmod, here is changing to environment modules):
+Ensure to configure it for your module software (default is Lmod, here is changing to Environment Modules):
 
 ```bash
 $ shpc config set module_sys:tcl
 ```
 
-#### Install Singularity
+#### Install Nextflow
 
-You can [install singularity](https://sylabs.io/guides/3.9/user-guide/quick_start.html)
-in many different ways! I usually choose from source.
+Next (har har), you'll want to [install nextflow](https://www.nextflow.io/docs/latest/getstarted.html). The Java Virtual Machine is required to use it.
 
 ```bash
-$ git clone https://github.com/sylabs/singularity
-$ cd singularity
-$ ./mconfig
+$ curl -s https://get.nextflow.io | bash
 ```
 
-#### Install nextflow
-
-Next (har har), you'll want to [install nextflow](https://www.nextflow.io/docs/latest/getstarted.html)
 
 #### Clone workflow
 
