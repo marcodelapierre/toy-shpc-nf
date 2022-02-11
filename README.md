@@ -11,8 +11,6 @@ The Conda example requires only [Miniconda](https://docs.conda.io).
 **Credits**: the backbone of the pipeline (`main.nf`) and sample input data come from [nextflow-io/rnaseq-nf](https://github.com/nextflow-io/rnaseq-nf).  
 
 
-## Usage
-
 
 ### 1. Setup
 
@@ -76,7 +74,7 @@ $ curl -s https://get.nextflow.io | bash
 ```
 
 
-#### Clone workflow
+### 2. Clone workflow
 
 And finally, you need the workflow!
 
@@ -85,7 +83,7 @@ $ git clone https://github.com/researchapps/demo-shpc-nf
 $ cd demo-shpc-nf
 ```
 
-### 2. Run with Singularity
+### 3. Run with Singularity
 
 First let's test just running the workflow with Singularity, which is probably our best bet since
 it only requires the two dependencies of nextflow and singularity. Make sure you have `singularity` 
@@ -104,7 +102,7 @@ CPU hours   : (a few seconds)
 Succeeded   : 4
 ```
 
-### 3. Run with Singularity-HPC (SHPC)
+### 4. Run with Singularity-HPC (SHPC)
 
 So why would you want to use shpc if it's one more dependency? Since we can install the containers as modules,
 given a shared HPC module system, users can easily share them across workflows. Or if it's just you, you can do the same.
@@ -142,7 +140,7 @@ $ nextflow run main.nf -profile shpc
 ```
 
 
-### 4. Run with Conda
+### 5. Run with Conda
 
 Finally, here is how to run the same workflow with conda! You'll need to have the `conda` executable on your path,
 and to add the correct channels:
