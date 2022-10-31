@@ -1,4 +1,4 @@
-## Demo RNAseq pipeline, to test interplay of Nextflow with SHPC container modules
+## Demo/toy RNAseq pipeline, to test interplay of Nextflow with SHPC container modules
 
 The pipeline requires [Nextflow](https://github.com/nextflow-io/nextflow) to run, plus some additional tools:
 
