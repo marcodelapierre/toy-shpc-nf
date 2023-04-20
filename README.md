@@ -1,4 +1,6 @@
-## Demo/toy RNAseq pipeline, to test interplay of Nextflow with SHPC container modules
+## Toy RNAseq pipeline, to test interplay of Nextflow with SHPC container modules
+
+Formerly called `marcodelapierre/demo-shpc-nf`.
 
 The pipeline requires [Nextflow](https://github.com/nextflow-io/nextflow) to run, plus some additional tools:
 
